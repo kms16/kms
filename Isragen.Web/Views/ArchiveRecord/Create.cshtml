@@ -1,0 +1,295 @@
+﻿
+@model Isragen.Web.Models.ArchiveRecordCreateViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+<ul class="REMOVE ME">
+    <li><h3>ArchiveRecordCreateViewModel</h3></li>
+    <li><h3>Id and URL was not used</h3></li>
+</ul>
+
+<div>
+    @Html.ActionLink("Cancel", "Index", "Archive", null, new { @class = "btn btn-default" })
+</div>
+
+@using (Html.BeginForm("Create", "ArchiveRecord", Model, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <h3>Record Data:</h3>
+        <hr />
+        <div id="archive-record-data" class="form-group">
+            <div class="form-group">
+                <h4>Related Date Period:</h4>
+                @Html.LabelFor(model => model.DatePeriod.Date1, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DatePeriod.Date1)
+                    @Html.ValidationMessageFor(model => model.DatePeriod.Date1, "", new { @class = "text-danger" })
+                </div>
+                @Html.LabelFor(model => model.DatePeriod.Date2, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DatePeriod.Date2)
+                    @Html.ValidationMessageFor(model => model.DatePeriod.Date2, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div id="related-people">
+                <h4>Related People:</h4>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.People, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => Model.People[0])
+                        @Html.ValidationMessageFor(model => model.People, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <a href="javascript:void(0)" id="add-person" onclick="add_person();">add another person</a>
+                </div>
+            </div>
+
+            <div id="related-events">
+                <h4>Related Events:</h4>
+                <div id="event-system-defined">
+                    <h5>System Defined Events:</h5>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Events, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.ListBoxFor(model => model.Events, new MultiSelectList(Enum.GetValues(typeof(Isragen.Models.IsragenEventType))), new { @id = "event-individual-type", onchange = "updateEventView()", size = 23 })
+                            @Html.ValidationMessageFor(model => model.Events, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div id="event-user-defined">
+                    <h5>Events defined by user not listed in previos paragraph:</h5>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.UserEvents[0], htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.UserEvents[0], new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.UserEvents[0], "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <a href="javascript:void(0)" id="add-user-event" onclick="add_user_event();">add another event</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="related-places">
+                <div class="form-group">
+                    <h4>Related Places:</h4>
+                    @Html.LabelFor(model => model.Places, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => Model.Places[0])
+                        @Html.ValidationMessageFor(model => model.Places, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <a href="javascript:void(0)" id="add-place" onclick="add_place();">add another place</a>
+                </div>
+            </div>
+
+            <div id="related-agencies">
+                <h4>Related Agencies:</h4>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Agencies, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => Model.Agencies[0])
+                        @Html.ValidationMessageFor(model => model.Agencies, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <a href="javascript:void(0)" id="add-agency" onclick="add_agency();">add another agency</a>
+                </div>
+            </div>
+            <div class="form-group">
+                <a href="javascript:void(0)" class="goto-record-description" onclick="goto_description();">next</a>
+            </div>
+        </div>
+
+        <div id="archive-record-description" class="form-group" hidden>
+            <h3>Record Descrition:</h3>
+            <hr />
+            <div class="form-group">
+                <h4>Record Title/Name:</h4>
+                @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h4>Record Abbriviation:</h4>
+                @Html.LabelFor(model => model.Abbriviation, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Abbriviation, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Abbriviation, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h4>Creator(Person, Agency, Esteblishment):</h4>
+                @Html.LabelFor(model => model.Creator, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Creator, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Creator, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h4>Publication Facts:</h4>
+                @Html.LabelFor(model => model.PublicationFacts, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PublicationFacts, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PublicationFacts, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h4>Date when this record was Created:</h4>
+                @Html.LabelFor(model => model.CreatedOn, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.CreatedOn, new { htmlAttributes = new { @class = "form-control date" } })
+                    @Html.ValidationMessageFor(model => model.CreatedOn, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h4>Place where this record was Created:</h4>
+                @Html.LabelFor(model => model.CreatedAt, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.CreatedAt, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CreatedAt, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <hr />
+            <div class="form-group">
+                <a href="javascript:void(0)" class="goto-record-data" onclick="goto_data();">return to data</a> ||
+                <a href="javascript:void(0)" class="goto-record-content" onclick="goto_content();">next</a>
+            </div>
+        </div>
+        <div id="archive-record-content" class="form-group" hidden>
+            <h3>Info describes record File:</h3>
+            <hr />
+            <div class="form-group">
+                <h4>Record File:</h4>
+                @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.Content, new { type = "file", htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h4>Record Format (Image, Audio, Video, Text ...):</h4>
+                @Html.LabelFor(model => model.MultimediaFormat, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EnumDropDownListFor(model => model.MultimediaFormat, "Select Media Format", new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MultimediaFormat, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <h4>Keywords describing this record, will be used in search:</h4>
+                @Html.LabelFor(model => model.Keywords, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Keywords, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Keywords, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <hr />
+            <div class="form-group">
+                <a href="javascript:void(0)" class="goto-record-data" onclick="goto_data();">return to data</a> ||
+                <a href="javascript:void(0)" class="goto-record-description" onclick="goto_description();">return to description</a>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Submit" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Cancel", "Index", "Archive", null, new { @class = "btn btn-default" })
+</div>
+
+<script type="text/javascript">
+
+    var indexUserEvent;
+    var indexPlace;
+    var indexAgency;
+        $(document).ready(function () {
+            indexPerson = 1;
+            indexUserEvent = 1;
+            indexPlace = 1;
+            indexAgency = 1;
+        });
+        function add_person() {
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action("AddPerson", "ArchiveRecord", new { index = "INDEX" })'.replace("INDEX", indexPerson),
+                success: function (response) {
+                    $('#add-person').before(response);
+                    indexPerson++;
+                }
+            });
+        }
+
+    function add_user_event() {
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("AddUserEvent", "ArchiveRecord", new { index = "INDEX" })'.replace("INDEX", indexUserEvent),
+            success: function (response) {
+                $('#add-user-event').before(response);
+                indexUserEvent++;
+            }
+        });
+    }
+
+    function add_place() {
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("AddPlace", "ArchiveRecord", new { index = "INDEX" })'.replace("INDEX", indexPlace),
+            success: function (response) {
+                $('#add-place').before(response);
+                indexPlace++;
+            }
+        });
+    }
+
+    function add_agency() {
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("AddAgency", "ArchiveRecord", new { index = "INDEX" })'.replace("INDEX", indexAgency),
+            success: function (response) {
+                $('#add-agency').before(response);
+                indexAgency++;
+            }
+        });
+    }
+
+    function goto_data() {
+        $('#archive-record-data').show();
+        $('#archive-record-description').hide();
+        $('#archive-record-content').hide();
+    }
+
+    function goto_description() {
+        $('#archive-record-data').hide();
+        $('#archive-record-description').show();
+        $('#archive-record-content').hide();
+    }
+
+    function goto_content() {
+        $('#archive-record-data').hide();
+        $('#archive-record-description').hide();
+        $('#archive-record-content').show();
+    }
+</script>

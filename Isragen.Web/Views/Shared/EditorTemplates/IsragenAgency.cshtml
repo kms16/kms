@@ -1,0 +1,14 @@
+﻿@model Isragen.Models.IsragenAgency
+
+<div class="form-group from-inline">
+    <div class="col-md-6">
+        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-6">
+        @Html.LabelFor(model => model.Abbriviation, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.EditorFor(model => model.Abbriviation, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Abbriviation, "", new { @class = "text-danger" })
+    </div>
+</div>

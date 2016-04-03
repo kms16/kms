@@ -1,0 +1,9 @@
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Services\bin\Debug\Isragen.Services.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Services\bin\Debug\Isragen.Services.pdb
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Services\obj\Debug\Isragen.Services.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Services\obj\Debug\Isragen.Services.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Services\obj\Debug\Isragen.Services.pdb
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Services\bin\Debug\Isragen.Models.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Services\bin\Debug\Isragen.Models.pdb
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Services\bin\Debug\Isragen.Data.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Services\bin\Debug\Isragen.Data.pdb

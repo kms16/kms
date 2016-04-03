@@ -1,0 +1,28 @@
+﻿@model int
+
+<div class="form-group">
+    <label class="control-label col-md-2" for="People_'@Model'__Name">Name</label>
+    <div class="col-md-10">
+        <input class="form-control text-box single-line" id="People_'@Model'__Name" name="People['@Model'].Name" type="text" value="" />
+        <span class="field-validation-valid text-danger" data-valmsg-for="People['@Model'].Name" data-valmsg-replace="true"></span>
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="control-label col-md-2" for="People_'@Model'__Surname">Surname</label>
+    <div class="col-md-10">
+        <input class="form-control text-box single-line" id="People_'@Model'__Surname" name="People['@Model'].Surname" type="text" value="" />
+        <span class="field-validation-valid text-danger" data-valmsg-for="People['@Model'].Surname" data-valmsg-replace="true"></span>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-md-10">
+        <label class="col-md-2 control-label" for="People_'@Model'__Male:">Male:</label>
+        <input data-val="true" data-val-required="The Gender field is required." id="People_'@Model'__Gender" name="People['@Model'].Gender" type="radio" value="Male" />
+    </div>
+    <div class="col-md-10">
+        <label class="col-md-2 control-label" for="People_'@Model'__Female:">Female:</label>
+        <input id="People_'@Model'__Gender" name="People['@Model'].Gender" type="radio" value="Female" />
+    </div>
+</div>

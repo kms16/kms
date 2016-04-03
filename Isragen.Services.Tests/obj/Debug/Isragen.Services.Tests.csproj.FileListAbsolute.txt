@@ -1,0 +1,10 @@
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Services.Tests\obj\Debug\Isragen.Services.Tests.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Services.Tests\bin\Debug\Isragen.Services.Tests.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Services.Tests\bin\Debug\Isragen.Services.Tests.pdb
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Services.Tests\bin\Debug\Isragen.Services.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Services.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Services.Tests\bin\Debug\Isragen.Models.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Services.Tests\bin\Debug\Isragen.Services.pdb
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Services.Tests\bin\Debug\Isragen.Models.pdb
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Services.Tests\obj\Debug\Isragen.Services.Tests.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Services.Tests\obj\Debug\Isragen.Services.Tests.pdb

@@ -1,0 +1,50 @@
+﻿@model Isragen.Web.Models.ArchiveRecordDataViewModel
+
+<div class="form-group">
+    @Html.LabelFor(model => model.DatePeriod, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.DatePeriod, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.DatePeriod, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div id="search-related-people">
+    @Html.EditorFor(model => Model.People[0])
+    <div id="insert-person-before"></div>
+    <a href="javascript:void(0)" id="add-person" onclick="add_person();">add another person</a>
+</div>
+
+<div id="search-related-events">
+    <div id="event-system-defined">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Events, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.ListBoxFor(model => model.Events, new MultiSelectList(Enum.GetValues(typeof(Isragen.Models.IsragenEventType))), new { @id = "event-individual-type", onchange = "updateEventView()", size = 23 })
+                @Html.ValidationMessageFor(model => model.Events, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div id="event-user-defined">
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserEvents[0], htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.UserEvents[0], new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UserEvents[0], "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div id="insert-event-before"></div>
+        <a href="javascript:void(0)" id="add-user-event" onclick="add_user_event();">add another event</a>
+    </div>
+</div>
+
+<div id="search-related-places">
+    @Html.EditorFor(model => Model.Places[0])
+    <div id="insert-place-before"></div>
+    <a href="javascript:void(0)" id="add-place" onclick="add_place();">add another place</a>
+</div>
+
+<div id="search-related-agencies">
+    @Html.EditorFor(model => Model.Agencies[0])
+    <div id="insert-agency-before"></div>
+    <a href="javascript:void(0)" id="add-agency" onclick="add_agency();">add another agency</a>
+</div>

@@ -1,0 +1,10 @@
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Data\bin\Debug\Isragen.Data.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Data\bin\Debug\Isragen.Data.pdb
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Data\bin\Debug\MongoDB.Bson.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Data\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Data\bin\Debug\MongoDB.Driver.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Data\bin\Debug\MongoDB.Bson.xml
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Data\bin\Debug\MongoDB.Driver.xml
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Data\obj\Debug\Isragen.Data.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Data\obj\Debug\Isragen.Data.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Data\obj\Debug\Isragen.Data.pdb

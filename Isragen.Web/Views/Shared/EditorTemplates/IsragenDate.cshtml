@@ -1,0 +1,25 @@
+﻿@model Isragen.Models.IsragenDate
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Day, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.Day, new { @class = "form-control isragen-day", @Value = "Choose Day" } )
+        @Html.ValidationMessageFor(model => model.Day, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Month, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.Month, new { @class = "form-control isragen-month", @Value = "Choose Month" })
+        @Html.ValidationMessageFor(model => model.Month, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Year, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.Year, new { @class = "form-control isragen-year", @Value = "Choose Year" } )
+        @Html.ValidationMessageFor(model => model.Year, "", new { @class = "text-danger" })
+    </div>
+</div>

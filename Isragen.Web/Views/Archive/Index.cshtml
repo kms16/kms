@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Isragen Archive";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <h3>Add new File</h3>
+        <p>
+            Add new file to ISRAGEN archive
+        </p>
+        <p><a class="btn btn-default" href="@Url.Action("Create","ArchiveRecord")">Add file &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h3>Search for File</h3>
+        <p>
+            Search for existing within the ISRAGEN archive file.
+        </p>
+        <p><a class="btn btn-default" href="@Url.Action("Search", "ArchiveRecord" )">Search &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h3>Archive Details</h3>
+        <p>
+            Brief Description of this Archive.
+        </p>
+        <p><a class="btn btn-default" href="@Url.Action("Details", "Archive")">Details &raquo;</a></p>
+    </div>
+</div>

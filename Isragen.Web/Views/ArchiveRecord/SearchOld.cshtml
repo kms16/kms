@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Search In Archive";
+}
+
+<h2>Search In Archive</h2>
+<div id="search-option-selector">
+    <fieldset>
+        <div class="form-group">
+            @Html.Label("Search by Data:", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.RadioButton("search-option", "option-by-description", true, new { @id = "option-by-data" })
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <div class="form-group">
+            @Html.Label("Search by Description:", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.RadioButton("search-option", "option-by-description", false, new { @id = "option-by-description" })
+            </div>
+        </div>
+    </fieldset>
+</div>
+
+<div id="search-form-container">
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#option-by-data").click(function () {
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("AjaxSearchByData", "ArchiveRecord")',
+                success: function (result) { $("#search-form-container").html(result); }
+            });
+        });
+        $("#option-by-description").click(function () {
+            $("#search-form-container").replaceWith("JILOPA");
+        });
+    });
+</script>

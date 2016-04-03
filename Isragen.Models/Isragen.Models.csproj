@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4C467C81-9E0B-4868-BB79-084D1BE9F4B0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Isragen.Models</RootNamespace>
+    <AssemblyName>Isragen.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Gedcom\Classes\GedcomAddress.cs" />
+    <Compile Include="Gedcom\Classes\GedcomAdoptedByParent.cs" />
+    <Compile Include="Gedcom\Classes\GedcomAge.cs" />
+    <Compile Include="Gedcom\Classes\GedcomAgeDescriptor.cs" />
+    <Compile Include="Gedcom\Classes\GedcomAssociation.cs" />
+    <Compile Include="Gedcom\Classes\GedcomAttributeIndividual.cs" />
+    <Compile Include="Gedcom\Classes\GedcomAttributeType.cs" />
+    <Compile Include="Gedcom\Classes\GedcomCalendarType.cs" />
+    <Compile Include="Gedcom\Classes\GedcomCertaintyAssessment.cs" />
+    <Compile Include="Gedcom\Classes\GedcomCitation.cs" />
+    <Compile Include="Gedcom\Classes\GedcomDate.cs" />
+    <Compile Include="Gedcom\Classes\GedcomDateType.cs" />
+    <Compile Include="Gedcom\Classes\GedcomEventDetail.cs" />
+    <Compile Include="Gedcom\Classes\GedcomEventFamily.cs" />
+    <Compile Include="Gedcom\Classes\GedcomEventIndividual.cs" />
+    <Compile Include="Gedcom\Classes\GedcomEventTypeFamily.cs" />
+    <Compile Include="Gedcom\Classes\GedcomEventTypeIndividual.cs" />
+    <Compile Include="Gedcom\Classes\GedcomFamilyLinkChild.cs" />
+    <Compile Include="Gedcom\Classes\GedcomFamilyLinkSpouse.cs" />
+    <Compile Include="Gedcom\Classes\GedcomGender.cs" />
+    <Compile Include="Gedcom\Classes\GedcomMediaType.cs" />
+    <Compile Include="Gedcom\Classes\GedcomMultimediaLink.cs" />
+    <Compile Include="Gedcom\Classes\GedcomNote.cs" />
+    <Compile Include="Gedcom\Classes\GedcomPedigreeLinkageType.cs" />
+    <Compile Include="Gedcom\Classes\GedcomPersonalName.cs" />
+    <Compile Include="Gedcom\Classes\GedcomPlace.cs" />
+    <Compile Include="Gedcom\Classes\GedcomRecord.cs" />
+    <Compile Include="Gedcom\Classes\GedcomRecordFamily.cs" />
+    <Compile Include="Gedcom\Classes\GedcomRecordIndividual.cs" />
+    <Compile Include="Gedcom\Classes\GedcomRecordModification.cs" />
+    <Compile Include="Gedcom\Classes\GedcomRecordNote.cs" />
+    <Compile Include="Gedcom\Classes\GedcomRecordRepository.cs" />
+    <Compile Include="Gedcom\Classes\GedcomRecordSource.cs" />
+    <Compile Include="Gedcom\Classes\GedcomRecordSubmission.cs" />
+    <Compile Include="Gedcom\Classes\GedcomRecordSubmitter.cs" />
+    <Compile Include="Gedcom\Classes\GedcomRecordType.cs" />
+    <Compile Include="Gedcom\Interfaces\IGedcomChangable.cs" />
+    <Compile Include="Gedcom\Interfaces\IGedcomCitable.cs" />
+    <Compile Include="Gedcom\Interfaces\IGedcomLinkable.cs" />
+    <Compile Include="Gedcom\Interfaces\IGedcomNotable.cs" />
+    <Compile Include="Gedcom\Interfaces\IGedcomRecord.cs" />
+    <Compile Include="Isragen\Classes\IsragenAgency.cs" />
+    <Compile Include="Isragen\Classes\IsragenArchiveRecord.cs" />
+    <Compile Include="Isragen\Classes\IsragenDate.cs" />
+    <Compile Include="Isragen\Classes\IsragenDatePeiod.cs" />
+    <Compile Include="Isragen\Classes\IsragenEventType.cs" />
+    <Compile Include="Isragen\Classes\IsragenMultimediaFormat.cs" />
+    <Compile Include="Isragen\Classes\IsragenPerson.cs" />
+    <Compile Include="Isragen\Classes\IsragenPlace.cs" />
+    <Compile Include="Isragen\Classes\IsragenResearch.cs" />
+    <Compile Include="Isragen\Interfaces\IIsragenArchiveRecord.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

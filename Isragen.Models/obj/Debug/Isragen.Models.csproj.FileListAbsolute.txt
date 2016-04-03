@@ -1,0 +1,5 @@
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Models\bin\Debug\Isragen.Models.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Models\bin\Debug\Isragen.Models.pdb
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Models\obj\Debug\Isragen.Models.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Models\obj\Debug\Isragen.Models.pdb
+C:\Users\User\Documents\Visual Studio 2015\Projects\Isragen\Isragen.Models\obj\Debug\Isragen.Models.csprojResolveAssemblyReference.cache
